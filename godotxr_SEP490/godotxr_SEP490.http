@@ -1,0 +1,6 @@
+@godotxr_SEP490_HostAddress = http://localhost:5005
+
+GET {{godotxr_SEP490_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
