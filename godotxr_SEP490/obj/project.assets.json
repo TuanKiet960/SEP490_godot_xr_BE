@@ -4898,11 +4898,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PRN222-SE17\\godotxr_SEP490\\godotxr_SEP490\\godotxr_SEP490.csproj",
+      "projectUniqueName": "D:\\SEP490_godot_xr_BE\\godotxr_SEP490\\godotxr_SEP490.csproj",
       "projectName": "godotxr_SEP490",
-      "projectPath": "D:\\PRN222-SE17\\godotxr_SEP490\\godotxr_SEP490\\godotxr_SEP490.csproj",
+      "projectPath": "D:\\SEP490_godot_xr_BE\\godotxr_SEP490\\godotxr_SEP490.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\PRN222-SE17\\godotxr_SEP490\\godotxr_SEP490\\obj\\",
+      "outputPath": "D:\\SEP490_godot_xr_BE\\godotxr_SEP490\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

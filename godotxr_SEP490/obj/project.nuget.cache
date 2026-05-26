@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ku6oAqi0BuA=",
+  "dgSpecHash": "+lbAi5930js=",
   "success": true,
-  "projectFilePath": "D:\\PRN222-SE17\\godotxr_SEP490\\godotxr_SEP490\\godotxr_SEP490.csproj",
+  "projectFilePath": "D:\\SEP490_godot_xr_BE\\godotxr_SEP490\\godotxr_SEP490.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
