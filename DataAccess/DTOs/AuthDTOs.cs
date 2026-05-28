@@ -1,4 +1,6 @@
-﻿namespace godotxr_SEP490.DTOs
+﻿using System;
+
+namespace DataAccess.DTOs
 {
     public class LoginRequestDTO
     {

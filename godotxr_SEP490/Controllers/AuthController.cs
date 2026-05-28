@@ -1,10 +1,7 @@
-﻿using godotxr_SEP490.DTOs;
-using godotxr_SEP490.Models;
-using godotxr_SEP490.Services;
+﻿using BusinessObjects.Dao;
+using BusinessObjects.Services;
+using DataAccess.DTOs;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace godotxr_SEP490.Controllers
 {
@@ -12,16 +9,14 @@ namespace godotxr_SEP490.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly GodotxrDbContext _context;
+        private readonly AuthDao _authDao;
         private readonly JwtService _jwtService;
 
-        public AuthController(GodotxrDbContext context, JwtService jwtService)
+        public AuthController(AuthDao authDao, JwtService jwtService)
         {
-            _context = context;
+            _authDao = authDao;
             _jwtService = jwtService;
         }
-
-       
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO request)
         {
@@ -29,22 +24,13 @@ namespace godotxr_SEP490.Controllers
                 string.IsNullOrWhiteSpace(request.Password))
                 return BadRequest(new { message = "Vui lòng nhập đầy đủ thông tin." });
 
-            var user = await _context.Users
-                .Include(u => u.Role)
-                .FirstOrDefaultAsync(u =>
-                    u.Email == request.UsernameOrEmail ||
-                    u.FullName == request.UsernameOrEmail);
+            var hashedPassword = PasswordHelper.Hash(request.Password);
+            var user = await _authDao.ValidateLoginAsync(request.UsernameOrEmail, hashedPassword);
 
             if (user == null)
-                return Unauthorized(new { message = "Tài khoản không tồn tại." });
+                return Unauthorized(new { message = "Tài khoản không tồn tại hoặc mật khẩu sai." });
 
-            if (user.Status != "active")
-                return Unauthorized(new { message = "Tài khoản đã bị khoá." });
-
-            var hashedInput = HashPassword(request.Password);
-            if (user.PasswordHash != hashedInput)
-                return Unauthorized(new { message = "Mật khẩu không đúng." });
-            var token = _jwtService.GenerateToken(user, user.Role.RoleName);
+            var token = _jwtService.GenerateToken(user, user.Role!.RoleName);
 
             return Ok(new LoginResponseDTO
             {
@@ -55,7 +41,6 @@ namespace godotxr_SEP490.Controllers
                 ExpiresAt = DateTime.UtcNow.AddHours(8)
             });
         }
-
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDTO request)
         {
@@ -64,36 +49,14 @@ namespace godotxr_SEP490.Controllers
                 string.IsNullOrWhiteSpace(request.FullName))
                 return BadRequest(new { message = "Vui lòng nhập đầy đủ thông tin." });
 
-            var exists = await _context.Users.AnyAsync(u => u.Email == request.Email);
-            if (exists)
-                return Conflict(new { message = "Email đã được sử dụng." });
-            var defaultRole = await _context.Roles
-                .FirstOrDefaultAsync(r => r.RoleName == "User");
-            if (defaultRole == null)
-                return StatusCode(500, new { message = "Lỗi hệ thống: không tìm thấy role mặc định." });
+            var hashedPassword = PasswordHelper.Hash(request.Password);
+            var (success, message, _) = await _authDao.RegisterAsync(
+                request.FullName, request.Email, hashedPassword, request.PhoneNumber);
 
-            var newUser = new User
-            {
-                FullName = request.FullName,
-                Email = request.Email,
-                PasswordHash = HashPassword(request.Password),
-                PhoneNumber = request.PhoneNumber,
-                RoleId = defaultRole.RoleId,
-                Status = "active",
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
-            };
+            if (!success)
+                return Conflict(new { message });
 
-            _context.Users.Add(newUser);
-            await _context.SaveChangesAsync();
-
-            return Ok(new { message = "Đăng ký thành công." });
-        }
-        private static string HashPassword(string password)
-        {
-            using var sha256 = SHA256.Create();
-            var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return Convert.ToBase64String(bytes);
+            return Ok(new { message });
         }
     }
 }

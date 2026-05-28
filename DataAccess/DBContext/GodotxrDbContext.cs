@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace godotxr_SEP490.Models;
+namespace DataAccess.DBContext;
 
 public partial class GodotxrDbContext : DbContext
 {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace godotxr_SEP490.Models;
+namespace DataAccess.Models;
 
-public partial class Role
+public partial class ExerciseType
 {
-    public int RoleId { get; set; }
+    public int TypeId { get; set; }
 
-    public string RoleName { get; set; } = null!;
+    public string TypeName { get; set; } = null!;
 
     public string? Description { get; set; }
 
@@ -17,5 +17,5 @@ public partial class Role
 
     public DateTime? UpdatedAt { get; set; }
 
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
+    public virtual ICollection<Exercise> Exercises { get; set; } = new List<Exercise>();
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace godotxr_SEP490.Models;
+namespace DataAccess.Models;
 
 public partial class Classroom
 {

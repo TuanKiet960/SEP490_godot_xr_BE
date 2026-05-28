@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37301.10 d17.14
+VisualStudioVersion = 17.14.37301.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "godotxr_SEP490", "godotxr_SEP490\godotxr_SEP490.csproj", "{660D6EC1-9A7A-459D-A6CA-05A5E9D9CEA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{5ACD0855-22FF-4FE3-AD21-187A02183F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{F7215FD9-101C-4E3A-9773-5F8C152FE722}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{660D6EC1-9A7A-459D-A6CA-05A5E9D9CEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{660D6EC1-9A7A-459D-A6CA-05A5E9D9CEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{660D6EC1-9A7A-459D-A6CA-05A5E9D9CEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACD0855-22FF-4FE3-AD21-187A02183F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACD0855-22FF-4FE3-AD21-187A02183F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACD0855-22FF-4FE3-AD21-187A02183F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACD0855-22FF-4FE3-AD21-187A02183F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7215FD9-101C-4E3A-9773-5F8C152FE722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7215FD9-101C-4E3A-9773-5F8C152FE722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7215FD9-101C-4E3A-9773-5F8C152FE722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7215FD9-101C-4E3A-9773-5F8C152FE722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

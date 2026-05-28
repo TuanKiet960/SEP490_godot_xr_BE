@@ -1,10 +1,11 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using godotxr_SEP490.Models;
+using DataAccess.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace godotxr_SEP490.Services
+namespace BusinessObjects.Services
 {
     public class JwtService
     {

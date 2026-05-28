@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("godotxr_SEP490")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+017ee941d4ae02773df199d2f1ad1ab6271a43d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1edaccc4b37f4f34757a684589c231a06b9e6e82")]
 [assembly: System.Reflection.AssemblyProductAttribute("godotxr_SEP490")]
 [assembly: System.Reflection.AssemblyTitleAttribute("godotxr_SEP490")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

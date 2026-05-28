@@ -279,3 +279,7 @@ D:\SEP490_godot_xr_BE\godotxr_SEP490\obj\Debug\net8.0\godotxr_SEP490.pdb
 D:\SEP490_godot_xr_BE\godotxr_SEP490\obj\Debug\net8.0\godotxr_SEP490.genruntimeconfig.cache
 D:\SEP490_godot_xr_BE\godotxr_SEP490\obj\Debug\net8.0\ref\godotxr_SEP490.dll
 D:\SEP490_godot_xr_BE\godotxr_SEP490\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\SEP490_godot_xr_BE\godotxr_SEP490\bin\Debug\net8.0\BusinessObjects.dll
+D:\SEP490_godot_xr_BE\godotxr_SEP490\bin\Debug\net8.0\DataAccess.dll
+D:\SEP490_godot_xr_BE\godotxr_SEP490\bin\Debug\net8.0\BusinessObjects.pdb
+D:\SEP490_godot_xr_BE\godotxr_SEP490\bin\Debug\net8.0\DataAccess.pdb
